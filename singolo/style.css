@@ -28,9 +28,12 @@
 
 *{
     box-sizing: border-box;
+    
 }
 body{
     font-family: "Lato", sans-serif;
+    
+    
 }
 .container{
     max-width: 1020px;
@@ -44,6 +47,7 @@ body{
     color: #FFFFFF;
     background-color: #2d303a;
     text-transform: uppercase;
+ 
 }
 
 .header{
@@ -89,6 +93,11 @@ body{
     transition: all .3s ease-in-out;
 }
 
+.active-link{
+    color: #ea676b;
+    outline: none !important
+}
+
 .site-header::after{
     display: block;
     content: "";
@@ -107,7 +116,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between; 
-    padding: 53px 10px 83px 11px;
+    padding: 42px 10px 39px 11px;
 }
 
 .section-slider::after{
@@ -118,8 +127,55 @@ body{
     background-color: #ea676b;
 }
 
+.slider-two{
+    background-color: #648BF0;
+}
+.slider-two::after{
+    background-color: #648BF0;
+}
+
+.wrapper-phone{
+    position: relative;
+    overflow: hidden;
+    height: 514px;
+    background: #000;
+}
+.wrapper-phone img{
+    position: relative;
+    right: 57px;
+    bottom: 43px;
+}
+
+.btn-phone{
+position: absolute;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+z-index: 1;
+}
+
+.black{
+    background: #000;
+    position: absolute;
+    width: 189px;
+    height: 335px;
+    
+}
+.vertical-phone-black{
+    left: 68px;
+    top: 74px;
+    z-index: 0;
+}
+
+.horizontal-phone-black{
+    transform: rotate(90deg);
+    left:500px;
+    top: 74px;
+    z-index: 0;
+}
+
 .btn-left, .btn-right{
-padding-top: 25px;
+/* padding-top: 25px; */
 opacity: .3;
 }
 
@@ -293,6 +349,13 @@ opacity: .3;
     padding: 3px 6px;
 }
 
+.portfolio-button-active{
+    color:#2d303a !important;
+    background-color:#767e9e !important;
+    transition: all .3s ease !important;
+    
+}
+
 .portfolio-buttons button:hover{
     color:#2d303a;
     background-color:#767e9e;
@@ -305,6 +368,10 @@ opacity: .3;
     padding-bottom: 48px;
 }
 
+.portfolio-img-active{
+    border: solid 5px #F06C64;
+}
+
 .portfolio-item:nth-child(n+13){
    display: none;
 }
@@ -315,6 +382,7 @@ opacity: .3;
     max-height: 187px;
     overflow: hidden;
     margin: 0 10px 20px 10px;
+    cursor: pointer;
 }
 
 .section-portfolio::after{
@@ -582,4 +650,43 @@ footer{
 .social img:hover{
     opacity: .4;
     transition: all .3s ease-in-out;
+}
+
+.hidden{
+    display: none;
+}
+
+.modal{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0,0,0, .4);
+    
+}
+
+.modal-wrapp{
+    position: absolute;
+    left: 40%;
+    top: 20%;
+    font-size: 18px;
+    color: seashell;
+    padding: 20px 40px;
+    border-radius: 10px;
+    line-height: 1.5;
+    font-family: 'Lato',sans-serif;
+    background: #ea676b;
+}
+
+.form-btn{
+    text-align: end;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    background-color: seashell;
+    
 }

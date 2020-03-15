@@ -16,10 +16,10 @@
                 <h1 class="header-logo">SINGOLO<span>*</span></h1>
                 <nav class="menu-list">
                     <a href="#" class="menu-link">Home</a>
-                    <a href="#" class="menu-link">Services</a>
-                    <a href="#" class="menu-link">Portfolio</a>
-                    <a href="#" class="menu-link">About</a>
-                    <a href="#" class="menu-link">Contact</a>
+                    <a href="#services" class="menu-link">Services</a>
+                    <a href="#portfolio" class="menu-link">Portfolio</a>
+                    <a href="#about" class="menu-link">About</a>
+                    <a href="#contacts" class="menu-link">Contact</a>
                 </nav>
             </div>
         </div>
@@ -32,18 +32,14 @@
                     <div class="btn-left">
                         <img src="./assets/btn-left.png" alt="button Left">
                     </div>
-                    <div class="phone">
-                        <div class="cam"><img src="./assets/cam.png" alt="Camera"></div>
-                        <div class="speaker"></div>
-                        <div class="screen"></div>
-                        <div class="btn-home"><img src="./assets/btn-home.png" alt=""></div>
+                    <div class="wrapper-phone">
+                        <div class="black vertical-phone-black"></div>
+                        <div class="black horizontal-phone-black"></div>
+                        <div class="btn-phone" style="bottom: 56px; left: 142px;"></div>
+                        <div class="btn-phone" style="bottom: 253px; left: 377px;"></div>
+                        <img src="./assets/slider-1.png" alt="" class="phone-img-slider">
                     </div>
-                    <div class="phone turn shadow">
-                        <div class="cam"><img src="./assets/cam.png" alt="Camera"></div>
-                        <div class="speaker"></div>
-                        <div class="screen screen-horizont"></div>
-                        <div class="btn-home"><img src="./assets/btn-home.png" alt=""></div>
-                    </div>
+
                     <div class="btn-right">
                         <img src="./assets/btn-right.png" alt="button Right">
                     </div>
@@ -51,7 +47,7 @@
             </div>
         </div>
 
-        <div class="section-services">
+        <div class="section-services" id="services">
             <div class="container">
                 <div class="services">
                     <div class="services-title">Our Services</div>
@@ -119,7 +115,7 @@
             </div>
         </div>
 
-        <div class="section-portfolio">
+        <div class="section-portfolio" id="portfolio">
             <div class="container">
                 <div class="portfolio-title">Portfolio</div>
                 <div class="portfolio-description description">Duis mollis, est non commodo luctus, nisi erat porttitor
@@ -160,7 +156,7 @@
             </div>
         </div>
 
-        <div class="section-about">
+        <div class="section-about" id="about">
             <div class="container">
                 <div class="about-title">About Us</div>
                 <div class="about-description description">Fusce dapibus, tellus ac cursus commodo, tortor mauris
@@ -217,7 +213,7 @@
             </div>
         </div>
 
-        <div class="section-feedback">
+        <div class="section-feedback" id="contacts">
             <div class="container">
                 <div class="feedback-title">Get a Quote</div>
                 <div class="feedback-description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.
@@ -226,7 +222,7 @@
                     dapibus,
                     tellus ac cursus commodo, tortor mauris condimentum nibh.</div>
                 <div class="feedback-wrapper">
-                    <form action="#" class="feedback-form">
+                    <form action="#" method="GET" class="feedback-form">
                         <input type="text" id="feedback-name" placeholder="Name (Required)" required minlength="3"
                             maxlength="25" pattern="[a-zA-Z0-9]+">
                         <input type="email" id="feedback-email" placeholder="Email (Required)" required>
@@ -257,6 +253,16 @@
             </div>
         </div>
     </main>
+    <div class="modal hidden">
+        <div class="modal-wrapp">
+            <span>Письмо отправлено</span>
+            <br>
+            <div class="form-theme"></div>
+            <div class="form-descr"></div>
+            <button class="form-btn">OK</button>
+        </div>
+
+    </div>
 
     <footer>
         <div class="container">
@@ -271,6 +277,10 @@
             </div>
         </div>
     </footer>
+
+
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
