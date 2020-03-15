@@ -11,6 +11,9 @@ for (let i = 0; i < menuLinks.length; i++) {
 }
 
 /* Slider. Переключение слайдов */
+let verticalBlack = document.querySelector('.vertical-phone-black')
+let horizontalBlack = document.querySelector('.horizontal-phone-black')
+
 let imgUrl = './assets/slider-`${}`.png'
 let imgArr = [1, 2]
 let imgSlider = document.querySelector('.phone-img-slider')
@@ -20,6 +23,9 @@ let sectionSlider = document.querySelector('.section-slider');
 let k = 0;
 let j = 1
 btnLeft.onclick = () => {
+    verticalBlack.style.zIndex = 0;
+    horizontalBlack.style.zIndex = 0;
+
     sectionSlider.classList.toggle('slider-two')
     if (k >= 1) {
         k--;
@@ -30,6 +36,8 @@ btnLeft.onclick = () => {
     }
 }
 btnRight.onclick = () => {
+    verticalBlack.style.zIndex = 0;
+    horizontalBlack.style.zIndex = 0;
     let sectionSlider = document.querySelector('.section-slider');
     sectionSlider.classList.toggle('slider-two')
     if (k < imgArr.length - 1) {
@@ -46,8 +54,7 @@ btnRight.onclick = () => {
 
 let btnPhone1 = document.querySelectorAll('.btn-phone')[0];
 let btnPhone2 = document.querySelectorAll('.btn-phone')[1];
-let verticalBlack = document.querySelector('.vertical-phone-black')
-let horizontalBlack = document.querySelector('.horizontal-phone-black')
+
 btnPhone1.onclick = () => {
 
     verticalBlack.style.zIndex == 1 ? verticalBlack.style.zIndex = 0 : verticalBlack.style.zIndex = 1;
