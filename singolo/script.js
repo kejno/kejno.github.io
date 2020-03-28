@@ -1,70 +1,95 @@
-
-/* Header */
-let menuLinks = document.querySelectorAll('.menu-link');
-for (let i = 0; i < menuLinks.length; i++) {
-    menuLinks[i].onclick = () => {
-        for (let j = 0; j < menuLinks.length; j++) {
-            menuLinks[j].classList.remove('active-link')
+document.addEventListener('scroll', onScroll);
+function onScroll(e) {
+    const currentPos = +(window.scrollY + 1).toFixed(0);
+    const mainDivs = document.querySelectorAll('main>div');
+    const links = document.querySelectorAll('.menu-list a')
+    mainDivs.forEach((el) => {
+        el.getAttribute('id')
+        if (el.offsetTop <= currentPos && (el.offsetTop + el.offsetHeight) > currentPos) {
+            links.forEach((a) => {
+                const idDivs = a.getAttribute('href').substring(1);
+                a.classList.remove('active-link');
+                if (el.getAttribute('id') === idDivs) {
+                    a.classList.add('active-link');
+                }
+            })
         }
-        menuLinks[i].classList.add('active-link')
-    }
+    })
+
 }
 
-/* Slider. Переключение слайдов */
-let verticalBlack = document.querySelector('.vertical-phone-black')
-let horizontalBlack = document.querySelector('.horizontal-phone-black')
+/* SLIDER */
 
-let imgUrl = './assets/slider-`${}`.png'
-let imgArr = [1, 2]
-let imgSlider = document.querySelector('.phone-img-slider')
-let btnLeft = document.querySelector('.btn-left')
+let slides = document.querySelectorAll('.slide-img');
+let slideParent = document.querySelectorAll('.slide')
+let slider = [];
+for (let i = 0; i < slides.length; i++) {
+    slider[i] = slides[i].src
+    slides[i].parentElement.remove()
+}
+console.log(slider)
+
+let step = 0;
+let offset = 0;
+
+function next() {
+    let img = document.createElement('img');
+    let div = document.createElement('div');
+
+
+
+    img.src = slider[step];
+    img.classList.add('slide-img')
+    div.classList.add('slide', 'slide-single')
+    document.querySelector('.slidershow-container').append(div);
+    div.style.left = offset * 960 + 'px';
+    document.querySelectorAll('.slide')[document.querySelectorAll('.slide').length - 1].append(img);
+
+    if (step + 1 == slider.length) {
+        step = 0
+    } else step++;
+    offset = 1;
+}
+
+
+function right() {
+    document.onclick = null;
+    let slides2 = document.querySelectorAll('.slide');
+    console.log(slides2)
+    let offset2 = 0;
+    document.querySelector('.section-slider').classList.toggle('bg-two');
+    document.querySelector('.black-ekran').classList.remove('d-block')
+    document.querySelector('.black-ekran-horizontal').classList.remove('d-block')
+
+    for (let i = 0; i < slides2.length; i++) {
+        slides2[i].style.left = offset2 * 960 - 960 + 'px';
+        offset2++;
+    }
+    setTimeout(() => {
+        slides2[0].remove();
+        next();
+        btnLeft.onclick = right;
+        btnRight.onclick = right;
+    }, 1000);
+}
+next();
+next();
+
+let btnLeft = document.querySelector('.btn-left');
 let btnRight = document.querySelector('.btn-right')
-let sectionSlider = document.querySelector('.section-slider');
-let k = 0;
-let j = 1
-btnLeft.onclick = () => {
-    verticalBlack.style.zIndex = 0;
-    horizontalBlack.style.zIndex = 0;
 
-    sectionSlider.classList.toggle('slider-two')
-    if (k >= 1) {
-        k--;
-        imgSlider.src = `./assets/slider-${imgArr[k]}.png`;
-    } else {
-        imgSlider.src = `./assets/slider-${imgArr[imgArr.length - 1]}.png`;
-        k = imgArr.length - 1
-    }
+btnLeft.onclick = right;
+btnRight.onclick = right;
+
+document.querySelector('.btn-phone').onclick = () => {
+    document.querySelector('.black-ekran').classList.toggle('d-block')
 }
-btnRight.onclick = () => {
-    verticalBlack.style.zIndex = 0;
-    horizontalBlack.style.zIndex = 0;
-    let sectionSlider = document.querySelector('.section-slider');
-    sectionSlider.classList.toggle('slider-two')
-    if (k < imgArr.length - 1) {
-        k++;
-        imgSlider.src = `./assets/slider-${imgArr[k]}.png`;
-    } else {
-        imgSlider.src = `./assets/slider-${imgArr[0]}.png`;
-        k = 0
-    }
-    console.log(k)
-}
-
-/* Slider. Активация экранов телефонов */
-
-let btnPhone1 = document.querySelectorAll('.btn-phone')[0];
-let btnPhone2 = document.querySelectorAll('.btn-phone')[1];
-
-btnPhone1.onclick = () => {
-
-    verticalBlack.style.zIndex == 1 ? verticalBlack.style.zIndex = 0 : verticalBlack.style.zIndex = 1;
-}
-btnPhone2.onclick = () => {
-    horizontalBlack.style.zIndex == 1 ? horizontalBlack.style.zIndex = 0 : horizontalBlack.style.zIndex = 1
+document.querySelector('.btn-phone-1').onclick = () => {
+    document.querySelector('.black-ekran-horizontal').classList.toggle('d-block')
 }
 
 
-/* Portfolio. Переключение табов */
+/* Portfolio.Переключение табов  */
 
 let btnPortfolio = document.querySelector('.portfolio-buttons').children;
 let itemPortfolio = document.querySelectorAll('.portfolio-item')
@@ -176,6 +201,22 @@ form.onsubmit = (event) => {
     }
 }
 
+/* МЕНЮ КНОПКА */
+
+let menuBtn = document.querySelector('.menu-button');
+let header = document.querySelector('.header')
+let headerLogo = document.querySelector('.header-logo');
+let logoNormal = document.querySelector('.logo-normal');
+let bgBlack = document.querySelector('.bg-black');
+
+
+menuBtn.onclick = () => {
+    menuBtn.classList.toggle('menu-button-active');
+    header.classList.toggle('header-active');
+    logoNormal.classList.toggle('disable');
+    bgBlack.classList.toggle('active')
 
 
 
+
+}  
