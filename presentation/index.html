@@ -1,0 +1,535 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Typescript presentation</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <section>
+                    <h1 style="color:#3FA5DA">TYPESCRIPT</h1>
+                    <h5>Presentation by</h5>
+                    <h2>Artem Rimarchyk</h2>
+                    <br>
+                    <hr>
+                    <h5>ROLLING SCOPE SCHOOL 2020Q1</h5>
+                </section>
+            </section>
+            <section>
+                <ul>
+                    <li>
+                        <h4 style="color:#3FA5DA">Introduction</h4>
+                    </li>
+                    <li>
+                        <h4>Installation</h4>
+                    </li>
+                    <li>
+                        <h4 style="color:#3FA5DA">Why TypeScript?</h4>
+                    </li>
+                    <li>
+                        <h4>Features</h4>
+                    </li>
+                    <li>
+                        <h4 style="color:#3FA5DA">Comparison With TypeScript Alternatives</h4>
+                    </li>
+                    <li>
+                        <h4>Who Uses TypeScript?</h4>
+                    </li>
+                    <li>
+                        <h4 style="color:#3FA5DA">Conclusion</h4>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <section>
+                    <hr><br>
+                    <h2 style="color:#3FA5DA">Introduction</h2>
+                    <br>
+                    <hr>
+                    <h5>JavaScript that scales.</h5>
+                </section>
+                <section>
+                    <h4>
+                        <p><span style="color:#3FA5DA">TypeScript</span> lets you write JavaScript the
+                            way you really want to
+                            <hr>
+                        </p>
+                        <p class="fragment"> <span style="color:#3FA5DA">TypeScript</span> is a typed superset of
+                            JavaScript that compiles to plain JavaScript</p>
+                    </h4>
+                </section>
+                <section>
+                    “Microsoft's <span style="color:#3FA5DA">TypeScript</span> may be the best of the
+                    many JavaScript front ends. It seems to
+                    generate the most attractive code.”
+                    - Douglas Crockford
+                </section>
+            </section>
+            <section>
+                <section>
+                    <hr><br>
+                    <h2 style="color:#3FA5DA">Installation</h2>
+                    <br>
+                    <hr>
+                    <h5>How to get it setup?</h5>
+                </section>
+                <section>
+                    <h3>There are two main ways to get the <span style="color:#3FA5DA">TypeScript</span> tools:</h3>
+                    <hr>
+                    <br>
+                    <ul>
+                        <li class="fragment">
+                            <h4>Via npm (the Node.js package manager)</h4>
+                            <pre><code class="hljs typescript" data-trim>
+                                npm install -g typescript
+                                                </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <h4>By installing <span style="color:#3FA5DA">TypeScript</span> Visual Studio plugins</h4>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <hr><br>
+                    <h2 style="color:#3FA5DA">Why TypeScript?</h2>
+                    <br>
+                    <hr>
+                    <h5>Why everyone is using it more and more</h5>
+                </section>
+                <section>
+                    <ul>
+                        <li>
+                            <span style="color:#3FA5DA">TypeScript</span> is a static typed Language which performs type
+                            Checking at runtime
+                            <pre><code class="hljs typescript" data-trim>
+                                let foo = 123;
+                                foo = '456' // Error: cannot assign 'string' to 'number'
+
+                                                </code></pre>
+                        </li>
+                        <li class="fragment">
+                            Javascript was never really designed to be programming language for big applications
+                        </li>
+                        <li class="fragment"><span style="color:#3FA5DA">TypeScript</span> attempts to solve some of the
+                            issues with Javascript</li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <hr><br>
+                    <h2 style="color:#3FA5DA">Features</h2>
+                    <br>
+                    <hr>
+                    <h5>What makes TypeScript super awesome</h5>
+                </section>
+                <section>
+                    <ul>
+                        <li>Data Types Supported</li>
+                        <li style="color:#3FA5DA">Functions</li>
+                        <li>Class </li>
+                        <li style="color:#3FA5DA">Inheritance</li>
+                        <li>Module</li>
+                        <li style="color:#3FA5DA">Interface</li>
+                        <li>Generics</li>
+                        <li style="color:#3FA5DA">Ambient Declarations</li>
+                        <li>Source File Dependencies</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3 style="color:#3FA5DA">Data Types Supported</h3>
+                    <ul>
+                        <li>Any</li>
+                        <li style="color:#3FA5DA">Primitive
+                            <ul>
+                                <li style="color:rgb(255, 255, 255)">Number</li>
+                                <li style="color:rgb(255, 255, 255)">Boolean</li>
+                                <li style="color:rgb(255, 255, 255)">String</li>
+                                <li style="color:rgb(255, 255, 255)">Void</li>
+                                <li style="color:rgb(255, 255, 255)">Null</li>
+                                <li style="color:rgb(255, 255, 255)">Undefined - Same as JS</li>
+                            </ul>
+                        </li>
+                        <li>Array</li>
+                        <li style="color:#3FA5DA">Enum</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3 style="color:#3FA5DA">Any</h3>
+                    <hr>
+                    <p>Any is used when it’s impossible to determine the type</p>
+                    <pre><code class="hljs typescript" data-trim>
+                     //When it's impossible to know, there is the 'Any' type
+                     let notSure: any = 4;
+                     notSure = 'maybe a string';
+                     notSure = false // okay, definitely a boolean
+                                        </code></pre>
+                </section>
+                <section>
+                    <h3 style="color:#3FA5DA">Primitive</h3>
+                    <hr>
+                    <ul>
+                        <li>number - all integer and float</li>
+                        <li style="color:#3FA5DA">boolean - true/false value</li>
+                        <li>string - both single/double quote can be used</li>
+                        <li style="color:#3FA5DA">No separate char type</li>
+                        <li>void - is used in function type returning nothing</li>
+                        <li style="color:#3FA5DA">null and undefined - functions as usual</li>
+                    </ul>
+                    <pre><code class="hljs typescript" data-trim>
+                        const isDone: boolean = false;
+                        const lines: number = 42;
+                        const name: string = 'Hello world';
+                        function firstFunc(): void {
+                            alert('HELLO WORLD!!');
+                        }
+                                           </code></pre>
+                </section>
+                <section>
+                    <h3 style="color:#3FA5DA">Array</h3>
+                    <hr>
+                    <pre><code class="hljs typescript" data-trim>
+                        const cities: string[] = ['Minsk', 'Gomel', 'Lida', 'Orsha'];
+                        const primes: number[] = [3, 4, 33, 22];
+                        const bools: boolean[] = [true, false, true];
+                        const anyValue: any[] = ['Privet', 67, false];
+                      
+                        //Alternatively, using the generic array type
+                        const list: Array<number> = [3, 6, 8, 44];
+                                           </code></pre>
+                </section>
+                <section>
+                    <h3 style="color:#3FA5DA">Enum</h3>
+                    <hr>
+                    <p>Enums allow us to define a set of named constants. Using enums can make it easier to document
+                        intent, or create a set of distinct cases. TypeScript provides both numeric and string-based
+                        enums.</p>
+                    <pre><code class="hljs typescript" data-trim>
+                       // For enumerations
+                       enum Direction {
+                        Up = 1,
+                        Down,
+                        Left,
+                        Right,
+                    }
+                                           </code></pre>
+                </section>
+                <section>
+                    <h3 style="color:#3FA5DA">Functions</h3>
+                    <hr>
+                    <ul>
+                        <li>Type Annotation for parameter and return type</li>
+                        <li style="color:#3FA5DA">Optional and Default Parameter.</li>
+                        <li>Function Overloads</li>
+                        <li style="color:#3FA5DA">Fat Arrow functions.</li>
+                    </ul>
+                    <pre><code class="hljs typescript" data-trim>
+                                           function firstFunc(): void {
+                            alert('HELLO WORLD!!');
+                        }
+                                           </code></pre>
+                </section>
+                <section>
+                    <h3 style="color:#3FA5DA">TypeScript Classes</h3>
+                    <hr>
+                    <ul>
+                        <li>Can implement interfaces</li>
+                        <li style="color:#3FA5DA">Inheritance</li>
+                        <li>Instance methods/members</li>
+                        <li style="color:#3FA5DA">Static methods/members</li>
+                        <li>Single constructor</li>
+                        <li style="color:#3FA5DA">Default/Optional parameter</li>
+                        <li>ES6 class syntax</li>
+                    </ul>
+                </section>
+                <section>
+                    <!--                     <h5 style="color:#3FA5DA">TypeScript Classes Example</h5> -->
+                    <pre style="width: 100%;"><code class="hljs typescript" data-trim>
+                    // Classes - members are public by Defaultclass Point {
+                        // Properties
+                        x: number;
+                        constructor(x: number, public y: number = 0){
+                            this.x = x;
+                        }
+                        // Functions
+                        dist() { return Math.sqrt(this.x * this.x + this.y + this.y); }
+                        // Static members
+                        static origin = new Point(0, 0);
+                    }
+                    const p1 = new Point(10, 20);
+                    const p2 = new Point(25); // y wiil be 0
+
+                    //Inheritance
+                    class Point3D extends Point {
+                        constructor(x: numbed, y: number, public z:number=0){
+                            super(x, y);
+                        }
+                        // Overwrite
+                        dist() {
+                           const d=super.dist();
+                           return Math.sqrt(d * d + this.z * this.z);
+                        }
+                    }
+                                           </code></pre>
+                </section>
+                <section>
+                    <h3 style="color:#3FA5DA">Inheritance</h3>
+                    <hr>
+                    <ul>
+                        <li>Typescript supports inheritance of class through <span style="color:#3FA5DA">extends <span
+                                    style="color:rgb(255, 255, 255)">and</span>
+                                super</span> keyword</li>
+                    </ul>
+                    <pre><code class="hljs typescript" data-trim>
+                        class Animal {
+                            move(distanceInMeters: number = 0) {
+                              console.log(`Animal moved ${distanceInMeters}m.`);
+                            }
+                          }
+                        class Dog extends Animal {
+                            bark() {
+                              console.log("Woof! Woof!");
+                            }
+                          }
+                                                   const dog = new Dog();
+                          dog.bark();
+                          dog.move(10);
+                          dog.bark();
+                                           </code></pre>
+                </section>
+                <section>
+                    <h3 style="color:#3FA5DA">Modules</h3>
+                    <hr>
+                    <ul>
+                        <li>Modules can be defined using module keyword</li>
+                        <li style="color:#3FA5DA">A module can contains sub-modules, class, enums or interfaces. But
+                            can’t directly contains functions</li>
+                        <li>Modules can be nested(sub-modules)</li>
+                        <li style="color:#3FA5DA">Classes and Interfaces can be exposed using export keyword</li>
+                    </ul>
+                </section>
+                <section>
+                    <pre><code class="hljs typescript" data-trim>
+           module Geometry {
+               export class Square {
+                   construcotr( public sideLength: number = 0){
+                    }
+                    area() {
+                        return Math.pow(this.sideLength, 2);
+                    }
+               }
+           }
+           const s1 = new Geometry.Square(5);
+
+           // Local alias for referencing a module
+           import G = Geometry;
+
+           const s2 = new G.Square(10);
+
+                                           </code></pre>
+                </section>
+                <section>
+                    <h3 style="color:#3FA5DA">Interfaces</h3>
+                    <hr>
+                    <ul>
+                        <li>Declared using interface keyword</li>
+                        <li style="color:#3FA5DA">Like other TS features it’s design time features i.e. no extra code
+                            would be emitted to resultant JS file</li>
+                        <li>Function Overloads</li>
+                        <li style="color:#3FA5DA">Errors being shown when interface signature and implementation
+                            doesn’t match.</li>
+                    </ul>
+                </section>
+                <section>
+                    <pre style="width: max-content;"><code class="hljs typescript" data-trim>
+                        interface Employee {
+                            firstName: string;
+                            lastName?: string; //optional member
+                            age: number;
+                        }
+                        function showEmployeeDetails (emp: Employee) {
+                            console.log(`Hello ${emp.firstName} ${emp.lastName}. Age ${emp.age}`);
+                        }
+                        const emp: Employee = {firstName:'Test', lastName: 'Name', age:23};
+                        const emp1 = 'Hello Employee2';
+                        const emp 2:Employee = {firstName: 'Test Emp#1', age:23}; 
+
+                        showEmployeeDetails(emp); // Works as expected
+                        showEmployeeDetails(emp1); // Not an Employee Type
+                        showEmployeeDetails(emp2); // Works as expected as well
+
+                                           </code></pre>
+                </section>
+                <section>
+                    <h3 style="color:#3FA5DA">Generics</h3>
+                    <hr>
+                    <ul>
+                        <li>Able to create a component that can work over a variety of types rather than a single one
+                        </li>
+                        <pre style="width: max-content;"><code class="hljs typescript" data-trim>
+                            function identity &ltT&gt(arg: T): T { 
+                                return arg; 
+                            }
+                                               </code></pre>
+
+                        <li style="color:#3FA5DA">type argument inference - we want the compiler to set the value of T
+                            for us automatically based on the type of the argument we pass in</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3 style="color:#3FA5DA">Ambient Declarations</h3>
+                    <hr>
+                    A major design goal of <span style="color:#3FA5DA">TypeScript</span> was to make it
+                    possible for you to safely and easily use existing
+                    JavaScript libraries in <span style="color:#3FA5DA">TypeScript</span>. <span
+                        style="color:#3FA5DA">TypeScript</span> does this
+                    by means of declaration.
+                </section>
+                <section>
+                    <h3 style="color:#3FA5DA">Source File Dependencies</h3>
+                    <hr>
+                    <ul>
+                        <li>Can be done using reference keyword</li>
+                        <li class="fragment" style="color:#3FA5DA">Must be the first statement of file</li>
+                        <li class="fragment">Paths are relative to the current file</li>
+                        <li class="fragment" style="color:#3FA5DA">Can also be done using tsconfig file</li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <hr><br>
+                    <h2 style="color:#3FA5DA">COMPARISON WITH TYPESCRIPT ALTERNATIVES</h2>
+                    <br>
+                    <hr>
+                </section>
+                <section>
+                    <h3 style="color:#3FA5DA">TypeScript VS ES6 Harmony</h3>
+                    <hr>
+                    <ul>
+                        <li>Complete language + Runtime overhaul</li>
+                        <li class="fragment" style="color:#3FA5DA">More features: generators, comprehensions, object
+                            literals etc</li>
+                        <li class="fragment">Will take years before widely deployed</li>
+                        <li class="fragment" style="color:#3FA5DA">No typing as of now(Maybe ES7)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3 style="color:#3FA5DA">TypeScript VS CoffeeScript</h3>
+                    <hr>
+                    <ul>
+                        <li>Also a superset to JavaScript</li>
+                        <li class="fragment" style="color:#3FA5DA">More syntactic sugar, still dynamically typed</li>
+                        <li class="fragment">Unlike TypeScript, JS is not valid CoffeeScript code</li>
+                        <li class="fragment" style="color:#3FA5DA">It doesn’t track ECMAScript 6</li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <hr><br>
+                    <h2 style="color:#3FA5DA">WHO USES TYPESCRIPT?</h2>
+                    <br>
+                    <hr>
+                </section>
+                <section>
+                    <img src="./lib/img/company.jpg" alt="">
+                </section>
+            </section>
+            <section>
+                <section>
+                    <hr><br>
+                    <h2 style="color:#3FA5DA">CONCLUSION</h2>
+                    <br>
+                    <hr>
+                    <h4>future today</h4>
+                </section>
+                <section>
+                    <h3 style="color:#3FA5DA">Pros:</h3>
+                    <ul>
+                        <li><b>Static typing</b></li>
+                        <li style="color:#3FA5DA"><b>Syntax sugar.</b> (Classes, interfaces, fat arrow functions, etc)
+                        </li>
+                        <li><b>JavaScript super-set.</b> In short that means that all of your existing JS code is
+                            already a TS code.</li>
+                        <li style="color:#3FA5DA"><b>It is Used in Popular Frameworks</b>
+                        </li>
+                        <li><b>Back-end Developer Feel More Comfortable With it</b>
+                        </li>
+                        <li style="color:#3FA5DA">
+                            <b>Great community and documentation</b>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h3 style="color:#3FA5DA">Cons:</h3>
+                    <ul>
+                        <li><b>Addition build step required</b></li>
+                        <li style="color:#3FA5DA"><b>You have to learn it</b>
+                        </li>
+                        <li>
+                            <b>Not all frameworks support Typescript</b>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <hr>
+                    <h1>Thanks!</h1>
+                    <hr>
+                    You can find me at:
+                    <br>
+                    <br>
+                    <a href="https://github.com/kejno">https://github.com/kejno</a>
+                    <br>
+                    <a href="https://linkedin.com/in/artemrimarchyk">https://linkedin.com/in/artemrimarchyk</a>
+                </section>
+            </section>
+        </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            dependencies: [
+                { src: 'plugin/markdown/marked.js' },
+                { src: 'plugin/markdown/markdown.js' },
+                { src: 'plugin/notes/notes.js', async: true },
+                {
+                    src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }
+                }
+            ]
+        });
+    </script>
+</body>
+
+</html>
