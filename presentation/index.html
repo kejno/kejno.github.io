@@ -212,22 +212,32 @@
                 <section>
                     <h3 style="color:#3FA5DA">Array</h3>
                     <hr>
-                    <pre><code class="hljs typescript" data-trim>
-                        const cities: string[] = ['Minsk', 'Gomel', 'Lida', 'Orsha'];
-                        const primes: number[] = [3, 4, 33, 22];
-                        const bools: boolean[] = [true, false, true];
-                        const anyValue: any[] = ['Privet', 67, false];
-                      
-                        //Alternatively, using the generic array type
-                        const list: Array<number> = [3, 6, 8, 44];
-                                           </code></pre>
+                    There are two ways to declare an array:
+                    <ul>
+                        <li>
+                            Using square brackets
+                            <pre><code class="hljs typescript" data-trim>
+                                let fruits: string[] = ['Apple', 'Orange', 'Banana'];
+                            </code></pre>
+                        </li>
+                        <li>
+                            Using a generic array type, Array&ltelementType&gt
+                            <pre><code class="hljs typescript" data-trim>
+                                let fruits: Array&ltstring&gt = ['Apple', 'Orange', 'Banana'];
+                            </code></pre>
+                        </li>
+                    </ul>
+                    <pre style="width: 100%;"><code class="hljs typescript" data-trim>
+                        // Example: Multi Type Array
+                        let values: (string | number)[] = ['Apple', 2, 'Orange', 3, 4, 'Banana']; 
+                        // or 
+                        let values: Array&ltstring | number&gt= ['Apple', 2, 'Orange', 3, 4, 'Banana'];  </code></pre>
                 </section>
                 <section>
                     <h3 style="color:#3FA5DA">Enum</h3>
                     <hr>
-                    <p>Enums allow us to define a set of named constants. Using enums can make it easier to document
-                        intent, or create a set of distinct cases. TypeScript provides both numeric and string-based
-                        enums.</p>
+                    <p>Enums allow us to declare a set of named constants i.e. a collection of related values that can
+                        be numeric or string values.</p>
                     <pre><code class="hljs typescript" data-trim>
                        // For enumerations
                        enum Direction {
@@ -236,7 +246,7 @@
                         Left,
                         Right,
                     }
-                                           </code></pre>
+                    </code></pre>
                 </section>
                 <section>
                     <h3 style="color:#3FA5DA">Functions</h3>
@@ -245,7 +255,7 @@
                         <li>Type Annotation for parameter and return type</li>
                         <li style="color:#3FA5DA">Optional and Default Parameter.</li>
                         <li>Function Overloads</li>
-                        <li style="color:#3FA5DA">Fat Arrow functions.</li>
+                        <li style="color:#3FA5DA">Arrow functions.</li>
                     </ul>
                     <pre><code class="hljs typescript" data-trim>
                         function firstFunc(): void {
@@ -267,9 +277,9 @@
                     </ul>
                 </section>
                 <section>
-                    <!--                     <h5 style="color:#3FA5DA">TypeScript Classes Example</h5> -->
                     <pre style="width: 100%;"><code class="hljs typescript" data-trim>
-                    // Classes - members are public by Defaultclass Point {
+                    // Classes - members are public by Default
+                    class Point {
                         // Properties
                         x: number;
                         constructor(x: number, public y: number = 0){
@@ -290,7 +300,7 @@
                         }
                         // Overwrite
                         dist() {
-                           const d=super.dist();
+                           const d = super.dist();
                            return Math.sqrt(d * d + this.z * this.z);
                         }
                     }
@@ -414,9 +424,9 @@
                     <hr>
                     <ul>
                         <li>Can be done using reference keyword</li>
-                        <li class="fragment" style="color:#3FA5DA">Must be the first statement of file</li>
-                        <li class="fragment">Paths are relative to the current file</li>
-                        <li class="fragment" style="color:#3FA5DA">Can also be done using tsconfig file</li>
+                        <li style="color:#3FA5DA">Must be the first statement of file</li>
+                        <li>Paths are relative to the current file</li>
+                        <li style="color:#3FA5DA">Can also be done using tsconfig file</li>
                     </ul>
                 </section>
             </section>
@@ -432,10 +442,10 @@
                     <hr>
                     <ul>
                         <li>Complete language + Runtime overhaul</li>
-                        <li class="fragment" style="color:#3FA5DA">More features: generators, comprehensions, object
+                        <li style="color:#3FA5DA">More features: generators, comprehensions, object
                             literals etc</li>
-                        <li class="fragment">Will take years before widely deployed</li>
-                        <li class="fragment" style="color:#3FA5DA">No typing as of now(Maybe ES7)</li>
+                        <li>Will take years before widely deployed</li>
+                        <li style="color:#3FA5DA">No typing as of now(Maybe ES7)</li>
                     </ul>
                 </section>
                 <section>
@@ -443,9 +453,9 @@
                     <hr>
                     <ul>
                         <li>Also a superset to JavaScript</li>
-                        <li class="fragment" style="color:#3FA5DA">More syntactic sugar, still dynamically typed</li>
-                        <li class="fragment">Unlike TypeScript, JS is not valid CoffeeScript code</li>
-                        <li class="fragment" style="color:#3FA5DA">It doesn’t track ECMAScript 6</li>
+                        <li style="color:#3FA5DA">More syntactic sugar, still dynamically typed</li>
+                        <li>Unlike TypeScript, JS is not valid CoffeeScript code</li>
+                        <li style="color:#3FA5DA">It doesn’t track ECMAScript 6</li>
                     </ul>
                 </section>
             </section>
@@ -489,7 +499,7 @@
                     <h3 style="color:#3FA5DA">Cons:</h3>
                     <ul>
                         <li>Addition build step required</li>
-                        <li style="color:#3FA5DA"><b>You have to learn it</b>
+                        <li style="color:#3FA5DA">You have to learn it
                         </li>
                         <li>
                             Not all frameworks support Typescript
